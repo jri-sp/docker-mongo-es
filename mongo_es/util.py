@@ -95,5 +95,6 @@ def requests_with_fs():
     :rtype: requests.sessions.Session
     """
     requests_session = requests.session()
+    requests_session.headers.update({'Accept': 'application/json'})
     requests_session.mount('file://', LocalFileAdapter())
     return requests_session
